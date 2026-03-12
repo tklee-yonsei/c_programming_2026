@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include <stdio.h> // studio가 아니라 stdio입니다!
 
 int main() {
     // 간단한 Hello World 출력
