@@ -2,22 +2,26 @@
 
 int main() {
     int abc = 1;
+    int* other = &abc;
+    int* other2 = other;
 
-    int other = abc;
     printf("abc: %d\n", abc);
-    printf("other: %d\n", other);
+    printf("other: %d\n", *other);
+    printf("other2: %d\n", *other2);
 
     printf("-------------------\n");
 
     abc++;
     printf("abc: %d\n", abc);
-    printf("other: %d\n", other);
+    printf("other: %d\n", *other);
+    printf("other2: %d\n", *other2);
 
     printf("-------------------\n");
 
-    other += 2;
+    (*other2)++;
     printf("abc: %d\n", abc);
-    printf("other: %d\n", other);
+    printf("other: %d\n", *other);
+    printf("other2: %d\n", *other2);
 
     return 0;
 }
