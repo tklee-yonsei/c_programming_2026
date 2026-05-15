@@ -30,6 +30,18 @@ void sortArray(int arr[], int size) {
 	}
 }
 
+void sortArrayDescending(int arr[], int size) {
+	for (int i = 0; i < size - 1; i++) {
+		for (int j = 0; j < size - i - 1; j++) {
+			if (arr[j] < arr[j + 1]) {
+				int temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+			}
+		}
+	}
+}
+
 int main(void) {
 	int arr[] = {1, 2, 3, 4, 5};
 	int size = sizeof(arr) / sizeof(arr[0]);
@@ -44,7 +56,11 @@ int main(void) {
 	printArray(arr, size);
 
 	sortArray(arr, size);
-	printf("정렬된 배열: ");
+	printf("오름차순 정렬 배열: ");
+	printArray(arr, size);
+
+	sortArrayDescending(arr, size);
+	printf("내림차순 정렬 배열: ");
 	printArray(arr, size);
 
 	return 0;
